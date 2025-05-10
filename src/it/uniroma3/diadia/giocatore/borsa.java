@@ -59,29 +59,12 @@ public class borsa {
 	public boolean hasAttrezzo(String nomeAttrezzo) {
 		return this.getAttrezzo(nomeAttrezzo)!=null;
 	}
-	
-	/*public Attrezzo removeAttrezzo1(String nomeAttrezzo) {
-		Attrezzo a = null;
-		for(int i=0;i<this.numeroAttrezzi ;i++) {
-			if (this.attrezzi[i]!=null && this.attrezzi[i].getNome().equals(nomeAttrezzo)) {
-				a = attrezzi[i];
-				for(int j=i; j<this.numeroAttrezzi -1; j++)
-						this.attrezzi[j]=this.attrezzi[j+1]; //ricuci la catena: sposti tutti gli elementi di una posizione
-				
-				this.attrezzi[numeroAttrezzi]=null; //l'ultimo elemento è doppio lo elimino
-				attrezzi[i] = null;
-				this.numeroAttrezzi--; //decremento la lunghezza dell'array
-				return a;
-				}
-		}
-		return null; //non ho trovato l'elemento
-	}
-	*/
+
 	
 	public boolean removeAttrezzo(Attrezzo a) {
 		
 		for(int i=0; i<this.numeroAttrezzi; i++) {
-			if(this.attrezzi[i] == a) {
+			if(this.attrezzi[i].equals(a)) {
 				this.attrezzi[i] = this.attrezzi[this.numeroAttrezzi-1];
 				this.attrezzi[this.numeroAttrezzi-1] = null; // non indispendabile
 				this.numeroAttrezzi--;

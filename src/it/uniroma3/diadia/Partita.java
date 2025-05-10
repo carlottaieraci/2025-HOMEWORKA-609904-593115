@@ -28,6 +28,7 @@ public class Partita {
 		this.finita = false;
 		/*this.cfu = CFU_INIZIALI; */
 		this.labirinto = new Labirinto();
+		this.giocatore = new giocatore();
 	}
 	
 	
@@ -63,16 +64,22 @@ public class Partita {
 		this.finita = true;
 	}
 
-	/*public int getCfu() {
-		return this.cfu;
-	}*/// da togliere
-	
 
-	/*public void setCfu(int cfu) {
-		this.cfu = cfu;		
-	}*/	// da togliere
+	public Stanza getStanzaCorrente() {
+		return labirinto.getStanzaCorrente();
+	}
+
+
+	public giocatore getGiocatore() {
+		return this.giocatore;
+	}
 	
-	/*public String toString() {
-		return this.labirinto.getStanzaCorrente().toString();
-	}*/
+	public boolean giocatoreIsVivo() {
+        return this.giocatore.getCfu() > 0;
+    }
+
+	
+	public void setStanzaCorrente(Stanza stanza) {
+	    this.labirinto.setStanzaCorrente(stanza);
+	}
 }
